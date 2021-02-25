@@ -1,5 +1,7 @@
 {
   "name": "buscaCNPJ",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

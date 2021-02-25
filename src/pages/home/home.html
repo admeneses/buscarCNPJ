@@ -1,14 +1,19 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content no-bounce scroll="false">
+  <div class="intro">
+    <p><ion-icon color="principal" name="search"></ion-icon></p>
+    <div class="titulo">
+      BUSCADOR DE CNPJs
+    </div>
+  </div>
+  <div padding>
+    <ion-item class="rounded">
+      <ion-label floating>Digite o CNPJ</ion-label>
+      <ion-input [(ngModel)]="cnpj" name="cnpj" type="number"></ion-input>
+    </ion-item>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+    <button class="buscar" ion-button block round type="submit" [disabled]="!cnpj" (click)="buscarCNPJ(cnpj)">BUSCAR</button>
+    <button class="buscar" ion-button block round type="submit" (click)="consultarEmpresas()">CONSULTAR</button>
+  </div>
 </ion-content>
+
+

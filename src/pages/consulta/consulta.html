@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="principal">
+    <ion-title>Consultar Empresas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-card>
+    <ion-card-header>
+      Lista de empresas salvas:
+    </ion-card-header>
+
+    <ion-list >
+      <div *ngFor="let empresa of empresas" ion-item>
+        <ion-item-divider text-wrap>
+          CNPJ: {{ empresa.cnpj }}
+        </ion-item-divider>
+    
+        <ion-item (click)="abrirDadosEmpresa(empresa)" text-wrap>
+          <ion-icon color="secondary" name="arrow-round-forward" item-right></ion-icon>
+          {{ empresa.nome }}
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-card>
+</ion-content>

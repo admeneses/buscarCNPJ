@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color="principal">
+    <ion-title>Dados Empresa</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-card>
+    <ion-item-divider text-wrap>
+      <ion-icon color="menu" name="contact" item-right></ion-icon>
+      Informações Gerais
+    </ion-item-divider>
+
+    <ion-item *ngIf="dados.nome" text-wrap>
+      <label class="titulo">Nome: </label> {{ dados.nome }}
+    </ion-item>
+
+    <ion-item *ngIf="dados.cnpj" text-wrap>
+      <label class="titulo">CNPJ: </label> {{ dados.cnpj }}
+    </ion-item>
+
+    <ion-item *ngIf="dados.porte" text-wrap>
+      <label class="titulo">Porte: </label>{{ dados.porte }}
+    </ion-item>
+
+    <ion-item *ngIf="dados.fantasia" text-wrap>
+      <label class="titulo">Fantasia: </label>{{ dados.fantasia }}
+    </ion-item>
+
+    <ion-item *ngIf="dados.natureza_juridica" text-wrap>
+      <label class="titulo">Nat. Jurídica: </label>{{ dados.natureza_juridica }}
+    </ion-item>
+
+    <ion-item *ngIf="dados.abertura" text-wrap>
+      <label class="titulo">Abertura: </label>{{ dados.abertura }}
+    </ion-item>
+
+    <ion-item *ngIf="dados.tipo" text-wrap>
+      <label class="titulo">Tipo: </label> {{ dados.tipo }}
+    </ion-item>
+
+    <ion-item-divider *ngIf="dados.situacao" text-wrap>
+      <ion-icon color="danger" name="alert" item-right></ion-icon>
+      Situação
+    </ion-item-divider>
+
+    <ion-item *ngIf="dados.situacao" text-wrap>
+      {{ dados.situacao }}
+    </ion-item>
+
+    <ion-item-divider *ngIf="dados.logradouro || dados.telefone || dados.email" text-wrap>
+      <ion-icon color="secondary" name="call" item-right></ion-icon>
+      Contatos
+    </ion-item-divider>
+
+    <ion-item *ngIf="dados.logradouro" text-wrap>
+      {{ dados.logradouro }}, {{ dados.numero }}, {{ dados.bairro }}
+      <br/>
+      {{ dados.municipio }} - {{ dados.uf }}, {{ dados.cep }}
+    </ion-item>
+
+    <ion-item *ngIf="dados.telefone" text-wrap>
+      {{ dados.telefone }}
+    </ion-item>
+
+    <ion-item *ngIf="dados.email" text-wrap>
+      {{ dados.email }}
+    </ion-item>
+  </ion-card>
+
+  <ion-fab *ngIf="dados.botaoSalvar" right bottom>
+    <button ion-fab color="principal" (click)="salvar()"><ion-icon name="checkmark-circle"></ion-icon></button>
+  </ion-fab>
+</ion-content>

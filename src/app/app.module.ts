@@ -3,10 +3,16 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { ApiCnpj } from '../providers/api-cnpj/api-cnpj';
+import { BancoDados } from '../providers/banco-dados/banco-dados';
+import { SQLite } from '@ionic-native/sqlite';
+import { Network } from '@ionic-native/network';
+import { Internet } from '../providers/internet/internet';
 @NgModule({
   declarations: [
     MyApp,
@@ -14,7 +20,8 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -24,6 +31,12 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
+    InAppBrowser,
+    SQLite, 
+    Network,
+    Internet,
+    ApiCnpj,
+    BancoDados,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
