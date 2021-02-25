@@ -125,6 +125,9 @@ export class BancoDados {
               //desabilita carregamento
               loading.dismiss();
             }else{
+              //desabilita carregamento
+              loading.dismiss();
+
               this.alertCtrl.create({
                 title: 'Nenhuma Empresa salva!',
                 subTitle: 'Busque uma empresa na tela principal por um CNPJ válido e tente novamente consultá-la.',
